@@ -45,7 +45,37 @@ namespace XamBodyFit
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int background = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int bg = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int email = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int email_pressed = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int facebook = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int facebook_pressed = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int Icon = 2130837510;
+			
+			// aapt resource value: 0x7f020007
+			public const int launcher = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int loading = 2130837512;
+			
+			// aapt resource value: 0x7f020009
+			public const int logo = 2130837513;
+			
+			// aapt resource value: 0x7f02000a
+			public const int splash_background = 2130837514;
 			
 			static Drawable()
 			{
@@ -60,8 +90,23 @@ namespace XamBodyFit
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int MyButton = 2131034112;
+			// aapt resource value: 0x7f060004
+			public const int btnAlready = 2131099652;
+			
+			// aapt resource value: 0x7f060003
+			public const int imgBtnEmail = 2131099651;
+			
+			// aapt resource value: 0x7f060002
+			public const int imgBtnFacebook = 2131099650;
+			
+			// aapt resource value: 0x7f060001
+			public const int imgViewLogo = 2131099649;
+			
+			// aapt resource value: 0x7f060005
+			public const int mainImageView = 2131099653;
+			
+			// aapt resource value: 0x7f060000
+			public const int parentContainer = 2131099648;
 			
 			static Id()
 			{
@@ -77,7 +122,10 @@ namespace XamBodyFit
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int login = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int Main = 2130903041;
 			
 			static Layout()
 			{
@@ -104,6 +152,22 @@ namespace XamBodyFit
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int Theme_Splash = 2131034112;
+			
+			static Style()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Style()
 			{
 			}
 		}
