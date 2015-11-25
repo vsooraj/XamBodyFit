@@ -1,0 +1,33 @@
+﻿Iterations 
+Version 1 is Android
+Version 1.1 is iPhone
+Version 2.0 is Shared Tasks
+Communication with backend server (i.e. Promise)
+Version 2.1 is WinPhone
+
+
+Xamarin Task Plan version 1.0
+
+1.1.Create New Solution XamBodyFit.
+1.2.Create an Android Project.
+1.3.Move to Git. ===https://github.com/vsooraj/XamBodyFit.git   ,,vsooraj@gmail.com/suraj1304
+1.4.Beautify Splash with Body Fit background screen.
+1.5.Create New Project and share WebApi Calls to separate files.
+1.6.Enable Login System
+  1.6.1 Sign up with Facebook,
+  1.6.1 Sign up with Email 
+  1.6.1 Already on Bodyfit (Register ).
+  1.6.1 Remember me,
+  1.6.1 Forgot password email to reset password.
+1.7 Create Lay out 
+    ACTIVATE
+    TRAIN
+    RECOVER
+    FLike|Watch
+
+8.Create Tabbed View  with Listing 
+
+  ACTIVATE|TRAIN|RECOVER 
+  List Videos on selected Category 
+  Integrate Video Player
+
