@@ -10,7 +10,7 @@ Xamarin Task Plan version 1.0
 
 1.1.Create New Solution XamBodyFit.
 1.2.Create an Android Project.
-1.3.Move to Git. ===https://github.com/vsooraj/XamBodyFit.git   ,,vsooraj@gmail.com/suraj1304
+1.3.Move to Git. ===https://github.com/vsooraj/XamBodyFit.git   ,vsooraj@gmail.com/suraj1304
 1.4.Beautify Splash with Body Fit background screen.
 1.5.Create New Project and share WebApi Calls to separate files.
 1.6.Enable Login System
