@@ -172,8 +172,8 @@ namespace XamBodyFit
 			// aapt resource value: 0x7f070006
 			public const int btnFacebook = 2131165190;
 			
-			// aapt resource value: 0x7f07000d
-			public const int btnLinkToLoginScreen = 2131165197;
+			// aapt resource value: 0x7f07000b
+			public const int btnLinkToLoginScreen = 2131165195;
 			
 			// aapt resource value: 0x7f070003
 			public const int btnLinkToRegisterScreen = 2131165187;
@@ -181,29 +181,23 @@ namespace XamBodyFit
 			// aapt resource value: 0x7f070002
 			public const int btnLogin = 2131165186;
 			
-			// aapt resource value: 0x7f07000c
-			public const int btnRegister = 2131165196;
-			
 			// aapt resource value: 0x7f07000a
-			public const int email = 2131165194;
+			public const int btnRegister = 2131165194;
 			
 			// aapt resource value: 0x7f070005
 			public const int imgViewLogo = 2131165189;
 			
-			// aapt resource value: 0x7f07000e
-			public const int mainImageView = 2131165198;
-			
-			// aapt resource value: 0x7f070009
-			public const int name = 2131165193;
+			// aapt resource value: 0x7f07000c
+			public const int mainImageView = 2131165196;
 			
 			// aapt resource value: 0x7f070004
 			public const int parentContainer = 2131165188;
 			
-			// aapt resource value: 0x7f07000b
-			public const int password = 2131165195;
-			
 			// aapt resource value: 0x7f070000
 			public const int txtEmail = 2131165184;
+			
+			// aapt resource value: 0x7f070009
+			public const int txtName = 2131165193;
 			
 			// aapt resource value: 0x7f070001
 			public const int txtPassword = 2131165185;
