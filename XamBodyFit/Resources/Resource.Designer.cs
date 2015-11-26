@@ -41,41 +41,114 @@ namespace XamBodyFit
 			}
 		}
 		
+		public partial class Color
+		{
+			
+			// aapt resource value: 0x7f040000
+			public const int bg_login = 2130968576;
+			
+			// aapt resource value: 0x7f040002
+			public const int bg_main = 2130968578;
+			
+			// aapt resource value: 0x7f040001
+			public const int bg_register = 2130968577;
+			
+			// aapt resource value: 0x7f040009
+			public const int btn_login = 2130968585;
+			
+			// aapt resource value: 0x7f04000a
+			public const int btn_login_bg = 2130968586;
+			
+			// aapt resource value: 0x7f04000c
+			public const int btn_logut_bg = 2130968588;
+			
+			// aapt resource value: 0x7f040004
+			public const int input_login = 2130968580;
+			
+			// aapt resource value: 0x7f040005
+			public const int input_login_hint = 2130968581;
+			
+			// aapt resource value: 0x7f040006
+			public const int input_register = 2130968582;
+			
+			// aapt resource value: 0x7f040007
+			public const int input_register_bg = 2130968583;
+			
+			// aapt resource value: 0x7f040008
+			public const int input_register_hint = 2130968584;
+			
+			// aapt resource value: 0x7f04000b
+			public const int lbl_name = 2130968587;
+			
+			// aapt resource value: 0x7f040003
+			public const int white = 2130968579;
+			
+			static Color()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Color()
+			{
+			}
+		}
+		
 		public partial class Drawable
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int background = 2130837504;
+			public const int activate = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int bg = 2130837505;
+			public const int arrow = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int email = 2130837506;
+			public const int arrow_up = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int email_pressed = 2130837507;
+			public const int bg = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int facebook = 2130837508;
+			public const int ic_emailicon = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int facebook_pressed = 2130837509;
+			public const int ic_pwdicon = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int Icon = 2130837510;
+			public const int icon = 2130837510;
 			
 			// aapt resource value: 0x7f020007
 			public const int launcher = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int loading = 2130837512;
+			public const int likewatch = 2130837512;
 			
 			// aapt resource value: 0x7f020009
 			public const int logo = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int splash_background = 2130837514;
+			public const int maximize = 2130837514;
+			
+			// aapt resource value: 0x7f02000b
+			public const int menu = 2130837515;
+			
+			// aapt resource value: 0x7f02000c
+			public const int play = 2130837516;
+			
+			// aapt resource value: 0x7f02000d
+			public const int recover = 2130837517;
+			
+			// aapt resource value: 0x7f02000e
+			public const int share = 2130837518;
+			
+			// aapt resource value: 0x7f02000f
+			public const int splash_background = 2130837519;
+			
+			// aapt resource value: 0x7f020010
+			public const int train = 2130837520;
+			
+			// aapt resource value: 0x7f020011
+			public const int watchus = 2130837521;
 			
 			static Drawable()
 			{
@@ -90,23 +163,50 @@ namespace XamBodyFit
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060004
-			public const int btnAlready = 2131099652;
+			// aapt resource value: 0x7f070008
+			public const int btnAlready = 2131165192;
 			
-			// aapt resource value: 0x7f060003
-			public const int imgBtnEmail = 2131099651;
+			// aapt resource value: 0x7f070007
+			public const int btnEmail = 2131165191;
 			
-			// aapt resource value: 0x7f060002
-			public const int imgBtnFacebook = 2131099650;
+			// aapt resource value: 0x7f070006
+			public const int btnFacebook = 2131165190;
 			
-			// aapt resource value: 0x7f060001
-			public const int imgViewLogo = 2131099649;
+			// aapt resource value: 0x7f07000d
+			public const int btnLinkToLoginScreen = 2131165197;
 			
-			// aapt resource value: 0x7f060005
-			public const int mainImageView = 2131099653;
+			// aapt resource value: 0x7f070003
+			public const int btnLinkToRegisterScreen = 2131165187;
 			
-			// aapt resource value: 0x7f060000
-			public const int parentContainer = 2131099648;
+			// aapt resource value: 0x7f070002
+			public const int btnLogin = 2131165186;
+			
+			// aapt resource value: 0x7f07000c
+			public const int btnRegister = 2131165196;
+			
+			// aapt resource value: 0x7f07000a
+			public const int email = 2131165194;
+			
+			// aapt resource value: 0x7f070005
+			public const int imgViewLogo = 2131165189;
+			
+			// aapt resource value: 0x7f07000e
+			public const int mainImageView = 2131165198;
+			
+			// aapt resource value: 0x7f070009
+			public const int name = 2131165193;
+			
+			// aapt resource value: 0x7f070004
+			public const int parentContainer = 2131165188;
+			
+			// aapt resource value: 0x7f07000b
+			public const int password = 2131165195;
+			
+			// aapt resource value: 0x7f070000
+			public const int txtEmail = 2131165184;
+			
+			// aapt resource value: 0x7f070001
+			public const int txtPassword = 2131165185;
 			
 			static Id()
 			{
@@ -122,10 +222,22 @@ namespace XamBodyFit
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int login = 2130903040;
+			public const int catalog = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Main = 2130903041;
+			public const int item = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int login = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int Main = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int register = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int splash = 2130903045;
 			
 			static Layout()
 			{
@@ -140,11 +252,44 @@ namespace XamBodyFit
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int ApplicationName = 2130968577;
+			// aapt resource value: 0x7f050001
+			public const int ApplicationName = 2131034113;
 			
-			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			// aapt resource value: 0x7f050000
+			public const int Hello = 2131034112;
+			
+			// aapt resource value: 0x7f050002
+			public const int app_name = 2131034114;
+			
+			// aapt resource value: 0x7f050009
+			public const int btn_link_to_login = 2131034121;
+			
+			// aapt resource value: 0x7f050008
+			public const int btn_link_to_register = 2131034120;
+			
+			// aapt resource value: 0x7f050006
+			public const int btn_login = 2131034118;
+			
+			// aapt resource value: 0x7f05000b
+			public const int btn_logout = 2131034123;
+			
+			// aapt resource value: 0x7f050007
+			public const int btn_register = 2131034119;
+			
+			// aapt resource value: 0x7f050003
+			public const int hint_email = 2131034115;
+			
+			// aapt resource value: 0x7f050005
+			public const int hint_name = 2131034117;
+			
+			// aapt resource value: 0x7f050004
+			public const int hint_password = 2131034116;
+			
+			// aapt resource value: 0x7f05000c
+			public const int name = 2131034124;
+			
+			// aapt resource value: 0x7f05000a
+			public const int welcome = 2131034122;
 			
 			static String()
 			{
@@ -159,8 +304,8 @@ namespace XamBodyFit
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int Theme_Splash = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int Theme_Splash = 2131099648;
 			
 			static Style()
 			{

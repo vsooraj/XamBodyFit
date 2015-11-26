@@ -59,16 +59,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppConfig.cs" />
+    <Compile Include="CatalogActivity.cs" />
+    <Compile Include="ItemActivity.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="RegexUtilities.cs" />
+    <Compile Include="RegisterActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashActivity.cs" />
+    <Compile Include="Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\login.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\splash.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\register.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\catalog.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\item.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -79,24 +98,65 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ProjectPlan.txt" />
     <AndroidResource Include="Resources\values\Styles.xml" />
     <AndroidResource Include="Resources\drawable\splash_background.xml" />
-    <AndroidResource Include="Resources\drawable\loading.png" />
+    <AndroidResource Include="Resources\drawable\icon.jpg" />
+    <AndroidResource Include="Resources\drawable\watchus.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\activate.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\arrow.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\arrow_up.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\bg.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_emailicon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_pwdicon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\likewatch.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\menu.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\recover.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\share.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\train.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\arrow.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\arrow_up.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\maximize.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\play.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\share.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\activate.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\arrow.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\arrow_up.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_emailicon.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_pwdicon.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\likewatch.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\maximize.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\menu.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\play.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\recover.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\share.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\train.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\activate.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\arrow.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\arrow_up.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_emailicon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_pwdicon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\likewatch.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\menu.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\recover.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\train.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\activate.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\arrow.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\arrow_up.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_emailicon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_pwdicon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\likewatch.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\menu.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\recover.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\train.png" />
     <AndroidResource Include="Resources\drawable\launcher.jpg" />
-    <AndroidResource Include="Resources\drawable\bg.png" />
-    <AndroidResource Include="Resources\drawable\logo.png" />
-    <AndroidResource Include="Resources\drawable\background.png" />
-    <AndroidResource Include="Resources\drawable\email.png" />
-    <AndroidResource Include="Resources\drawable\email_pressed.png" />
-    <AndroidResource Include="Resources\drawable\facebook.png" />
-    <AndroidResource Include="Resources\drawable\facebook_pressed.png" />
+    <AndroidResource Include="Resources\values\colors.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
