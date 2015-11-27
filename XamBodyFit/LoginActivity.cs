@@ -3,6 +3,8 @@ using System;
 using Android.App;
 using Android.OS;
 using Android.Widget;
+using Newtonsoft.Json;
+
 
 namespace XamBodyFit
 {
@@ -10,28 +12,35 @@ namespace XamBodyFit
     public class LoginActivity : Activity
     {
         private Button btnLogin;
+        EditText txtEmail, txtPassword;
         RegexUtilities regexUtilities = new RegexUtilities();
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.login);
             btnLogin = FindViewById<Button>(Resource.Id.btnLogin);
             btnLogin.Click += new EventHandler(btnLogin_Click);
+            txtEmail = FindViewById<EditText>(Resource.Id.txtEmail);
+            txtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
 
         }
         void btnLogin_Click(object sender, EventArgs e)
         {
-            EditText txtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
-            EditText txtEmail = FindViewById<EditText>(Resource.Id.txtEmail);
-            if (regexUtilities.IsValidEmail(txtEmail.Text) && validatePassword(txtPassword.Text))
+
+            var authkey = AppConfig.Auth_Token;
+            var status = Login(authkey, txtEmail.Text, txtPassword.Text);
+            if (status == LoginStatus.SUCCESS.ToString())
             {
-                StartActivity(typeof(CatalogActivity));
+                StartActivity(typeof(LoginActivity));
             }
             else
             {
-                Toast.MakeText(this, "Either Email or Password not valid, Please enter valid one.", ToastLength.Long).Show();
+                ToastMessage(status);
             }
+
         }
+
 
         private bool validatePassword(string password)
         {
@@ -41,6 +50,52 @@ namespace XamBodyFit
             return valid;
         }
 
+        private string Login(string authKey, string email, string password)
+        {
+            //if (regexUtilities.IsValidEmail(email) && validatePassword(password))
+            //{
+            AppConfig.Auth_Token = "5c3830f453a9219f22c8e5cca41f511d";
+            string jsonInput = "{\"emailid\":\"" + email + "\"authtoken\":\"" + AppConfig.Auth_Token + "\"password\":\"" + password + "\"}";
+            //var jsonInput = "";// " "{'password' : '1234',""authtoken"": ""5c3830f453a9219f22c8e5cca41f511d"",""emailid"" : ""test@1234.com""}"";
+            var loginJson = ServerCommunication.LoginServerCommunication(AppConfig.URL_LOGIN, jsonInput);
+            LoginResponse loginResponse = JsonConvert.DeserializeObject<LoginResponse>(loginJson);
+
+            //}
+            //else
+            //{
+            //    ToastMessage("Either email or password not valid, please enter valid one.");
+            //}
+            return LoginStatus.SUCCESS.ToString();
+
+        }
+
+        private void ToastMessage(string message)
+        {
+            Toast.MakeText(this, message, ToastLength.Long).Show();
+        }
+        private void JsonKeyValue(string tempJson)
+        {
+            //JObject parsed = JObject.Parse(tempJson);
+
+            //foreach (var pair in parsed)
+            //{
+            //    Console.WriteLine("{0}: {1}", pair.Key, pair.Value);
+            //}
+        }
+
+
+
+
 
     }
+    public enum LoginStatus
+    {
+        SUCCESS,
+        FAILED
+    }
+
+
+
+
+
 }
