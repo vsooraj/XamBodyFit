@@ -13,4 +13,12 @@
   <color name="btn_login_bg">#eceef1</color>
   <color name="lbl_name">#333333</color>
   <color name="btn_logut_bg">#ff6861</color>
+  <color name="btn_remember_me">#26ae90</color>
+  <color name="btn_Activate_bg">#FF0000</color>
+
+  <color name="btn_Train_bg">#0080FF</color>
+  <color name="btn_Recover_bg">#AEB404</color>
+  <color name="btn_FacebookLike_bg">#0040FF</color>
+  <color name="btn_WatchUs_bg">#FF0000</color>
+  
 </resources>

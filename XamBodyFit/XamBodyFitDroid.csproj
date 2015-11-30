@@ -71,7 +71,9 @@
     <Compile Include="LoginActivity.cs" />
     <Compile Include="LoginResponse.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="RegexUtilities.cs" />
+    <Compile Include="MenuActivity.cs" />
+    <Compile Include="RegisterResponse.cs" />
+    <Compile Include="Validation.cs" />
     <Compile Include="RegisterActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,6 +104,9 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\item.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Menu.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>

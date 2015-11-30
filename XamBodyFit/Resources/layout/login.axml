@@ -46,14 +46,21 @@
             android:background="@color/btn_login_bg"
             android:text="@string/btn_login"
             android:textColor="@color/btn_login" />
-    <!-- Link to Login Screen -->
+        <CheckBox
+            android:text="Remember Me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:id="@+id/chkRememberMe"
+            android:textColor="@color/btn_remember_me" />
+    <!-- forgot password -->
         <Button
-            android:id="@+id/btnLinkToRegisterScreen"
+            android:id="@+id/btnForgotPassword"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dip"
             android:background="@null"
-            android:text="@string/btn_link_to_register"
+            android:text="@string/btn_forgot_password"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="15dp" />

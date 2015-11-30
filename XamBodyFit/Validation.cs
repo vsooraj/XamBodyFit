@@ -4,11 +4,11 @@ using System.Text.RegularExpressions;
 
 namespace XamBodyFit
 {
-    public class RegexUtilities
+    public class Validation
     {
         bool invalid = false;
 
-        public bool IsValidEmail(string strIn)
+        public bool ValidateEmail(string strIn)
         {
             invalid = false;
             if (String.IsNullOrEmpty(strIn))
@@ -57,6 +57,20 @@ namespace XamBodyFit
                 invalid = true;
             }
             return match.Groups[1].Value + domainName;
+        }
+        public bool ValidatePassword(string password)
+        {
+            bool valid = false;
+            if (!string.IsNullOrWhiteSpace(password))
+                return (password.Length >= 4 ? true : false);
+            return valid;
+        }
+        public bool ValidateName(string name)
+        {
+            bool valid = false;
+            if (!string.IsNullOrWhiteSpace(name))
+                return (name.Length >= 4 ? true : false);
+            return valid;
         }
     }
 }
