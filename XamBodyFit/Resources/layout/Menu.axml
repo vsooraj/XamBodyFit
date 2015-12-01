@@ -22,19 +22,22 @@
         android:id="@+id/btnActivate"
         android:background="@color/btn_Activate_bg"
         android:text="ACTIVATE"
-        android:layout_marginTop="2dp" />
+        android:layout_marginTop="2dp"
+        android:drawableBottom="@drawable/activate" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="120.0dp"
         android:id="@+id/btnTrain"
         android:background="@color/btn_Train_bg"
-        android:text="TRAIN" />
+        android:text="TRAIN"
+        android:drawableBottom="@drawable/train" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="120.0dp"
         android:id="@+id/btnRecover"
         android:background="@color/btn_Recover_bg"
-        android:text="RECOVER" />
+        android:text="RECOVER"
+        android:drawableBottom="@drawable/recover" />
     <LinearLayout
         android:orientation="horizontal"
         android:background="@android:drawable/bottom_bar"

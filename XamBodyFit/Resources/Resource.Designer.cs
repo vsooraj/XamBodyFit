@@ -370,8 +370,11 @@ namespace XamBodyFit
 		public partial class Style
 		{
 			
+			// aapt resource value: 0x7f060002
+			public const int Mono_Android_Theme_Splash = 2131099650;
+			
 			// aapt resource value: 0x7f060001
-			public const int Mono_Android_Theme_Splash = 2131099649;
+			public const int Theme_Main = 2131099649;
 			
 			// aapt resource value: 0x7f060000
 			public const int Theme_Splash = 2131099648;

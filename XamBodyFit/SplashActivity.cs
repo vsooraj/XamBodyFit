@@ -13,7 +13,7 @@ namespace XamBodyFit
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.splash);
-            Thread.Sleep(6000);
+            Thread.Sleep(3000);
             StartActivity(typeof(MainActivity));
         }
 
