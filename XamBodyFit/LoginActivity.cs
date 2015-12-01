@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace XamBodyFit
 {
-    [Activity(Label = "Enter valid credentials")]
+    [Activity]
     public class LoginActivity : Activity
     {
         private Button btnLogin, btnForgotPassword;

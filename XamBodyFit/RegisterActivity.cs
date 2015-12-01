@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace XamBodyFit
 {
-    [Activity(Label = "Please provide your details")]
+    [Activity]
     public class RegisterActivity : Activity
     {
         private Button btnRegister;

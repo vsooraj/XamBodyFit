@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="AppConfig.cs" />
     <Compile Include="CatalogActivity.cs" />
+    <Compile Include="CatalogResponse.cs" />
     <Compile Include="Device.cs" />
     <Compile Include="Hardware.cs" />
     <Compile Include="ItemActivity.cs" />
@@ -83,6 +84,8 @@
     <Compile Include="SplashActivity.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Utilities.cs" />
+    <Compile Include="Video.cs" />
+    <Compile Include="CatalogAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -107,6 +110,9 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Menu.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\catalog_view.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>

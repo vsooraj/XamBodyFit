@@ -190,65 +190,77 @@ namespace XamBodyFit
 			// aapt resource value: 0x7f070002
 			public const int btnActivate = 2131165186;
 			
-			// aapt resource value: 0x7f07000d
-			public const int btnAlready = 2131165197;
+			// aapt resource value: 0x7f070012
+			public const int btnAlready = 2131165202;
 			
-			// aapt resource value: 0x7f07000c
-			public const int btnEmail = 2131165196;
+			// aapt resource value: 0x7f070011
+			public const int btnEmail = 2131165201;
 			
-			// aapt resource value: 0x7f07000b
-			public const int btnFacebook = 2131165195;
-			
-			// aapt resource value: 0x7f07000f
-			public const int btnFacebookLike = 2131165199;
-			
-			// aapt resource value: 0x7f070009
-			public const int btnForgotPassword = 2131165193;
+			// aapt resource value: 0x7f070010
+			public const int btnFacebook = 2131165200;
 			
 			// aapt resource value: 0x7f070014
-			public const int btnLinkToLoginScreen = 2131165204;
+			public const int btnFacebookLike = 2131165204;
 			
-			// aapt resource value: 0x7f070007
-			public const int btnLogin = 2131165191;
+			// aapt resource value: 0x7f07000e
+			public const int btnForgotPassword = 2131165198;
+			
+			// aapt resource value: 0x7f07000c
+			public const int btnLogin = 2131165196;
 			
 			// aapt resource value: 0x7f070004
 			public const int btnRecover = 2131165188;
 			
-			// aapt resource value: 0x7f070013
-			public const int btnRegister = 2131165203;
+			// aapt resource value: 0x7f070018
+			public const int btnRegister = 2131165208;
 			
 			// aapt resource value: 0x7f070003
 			public const int btnTrain = 2131165187;
 			
-			// aapt resource value: 0x7f070010
-			public const int btnWatchUs = 2131165200;
+			// aapt resource value: 0x7f070015
+			public const int btnWatchUs = 2131165205;
 			
-			// aapt resource value: 0x7f070008
-			public const int chkRememberMe = 2131165192;
+			// aapt resource value: 0x7f07000d
+			public const int chkRememberMe = 2131165197;
 			
 			// aapt resource value: 0x7f070000
 			public const int imgViewLogo = 2131165184;
 			
-			// aapt resource value: 0x7f07000e
-			public const int mainContainer = 2131165198;
+			// aapt resource value: 0x7f070009
+			public const int imgViewThumbnail = 2131165193;
 			
-			// aapt resource value: 0x7f070015
-			public const int mainImageView = 2131165205;
+			// aapt resource value: 0x7f070013
+			public const int mainContainer = 2131165203;
 			
-			// aapt resource value: 0x7f07000a
-			public const int parentContainer = 2131165194;
+			// aapt resource value: 0x7f070019
+			public const int mainImageView = 2131165209;
 			
 			// aapt resource value: 0x7f070005
-			public const int txtEmail = 2131165189;
+			public const int myListView = 2131165189;
 			
-			// aapt resource value: 0x7f070011
-			public const int txtFirstName = 2131165201;
+			// aapt resource value: 0x7f07000f
+			public const int parentContainer = 2131165199;
 			
-			// aapt resource value: 0x7f070012
-			public const int txtLastName = 2131165202;
+			// aapt resource value: 0x7f070007
+			public const int txtDescription = 2131165191;
+			
+			// aapt resource value: 0x7f070008
+			public const int txtDuration = 2131165192;
+			
+			// aapt resource value: 0x7f07000a
+			public const int txtEmail = 2131165194;
+			
+			// aapt resource value: 0x7f070016
+			public const int txtFirstName = 2131165206;
+			
+			// aapt resource value: 0x7f070017
+			public const int txtLastName = 2131165207;
+			
+			// aapt resource value: 0x7f07000b
+			public const int txtPassword = 2131165195;
 			
 			// aapt resource value: 0x7f070006
-			public const int txtPassword = 2131165190;
+			public const int txtTitle = 2131165190;
 			
 			static Id()
 			{
@@ -267,22 +279,25 @@ namespace XamBodyFit
 			public const int catalog = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int item = 2130903041;
+			public const int catalog_view = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int login = 2130903042;
+			public const int item = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int Main = 2130903043;
+			public const int login = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int Menu = 2130903044;
+			public const int Main = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int register = 2130903045;
+			public const int Menu = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int splash = 2130903046;
+			public const int register = 2130903046;
+			
+			// aapt resource value: 0x7f030007
+			public const int splash = 2130903047;
 			
 			static Layout()
 			{

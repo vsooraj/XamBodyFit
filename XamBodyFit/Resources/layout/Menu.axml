@@ -13,13 +13,16 @@
         android:id="@+id/imgViewLogo"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:background="@color/btn_Activate_bg"
+        android:paddingBottom="12dp"
         android:layout_gravity="center" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="120.0dp"
         android:id="@+id/btnActivate"
         android:background="@color/btn_Activate_bg"
-        android:text="ACTIVATE" />
+        android:text="ACTIVATE"
+        android:layout_marginTop="2dp" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="120.0dp"

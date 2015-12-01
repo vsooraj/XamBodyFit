@@ -1,20 +1,117 @@
 
+using System.Collections.Generic;
 using Android.App;
 using Android.OS;
 using Android.Widget;
+using Newtonsoft.Json;
 
 namespace XamBodyFit
 {
-    [Activity(Label = "Here is the Catalog ")]
+    [Activity]
     public class CatalogActivity : Activity
     {
         ListView mListView;
+        int categoryId, subcategoryId;
+        Response response = new Response();
+        List<Video> mItems;
+        CatalogResponse catalogResponse;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.catalog);
-            string text = Intent.GetStringExtra("MyData") ?? "Data not available";
-            Toast.MakeText(this, text, ToastLength.Short).Show();
+            mListView = FindViewById<ListView>(Resource.Id.myListView);
+            string category = Intent.GetStringExtra("MyData") ?? "Data not available";
+            string subCategory = null;
+            Toast.MakeText(this, category, ToastLength.Short).Show();
+            CatalogStatus status = getVideos(category, subCategory);
+            if (status == CatalogStatus.SUCCESS)
+            {
+                mItems = catalogResponse.Videos;
+                CatalogAdapter adapter = new CatalogAdapter(this, mItems);
+                mListView.Adapter = adapter;
+                mListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) =>
+                {
+                    var title = mItems[e.Position].Title;
+                    //Toast.MakeText(this, title, ToastLength.Long).Show();
+                    Utilities.ToastMessage(this, Utilities.ToastMessageType.INFO, title);
+                };
+
+            }
+            else if (status == CatalogStatus.FAILED)
+            {
+                Utilities.ToastMessage(this, Utilities.ToastMessageType.INFO, response.text);
+            }
+            else
+            {
+                Utilities.ToastMessage(this, Utilities.ToastMessageType.ERROR, "Connection failed, Please check your network connection");
+            }
         }
+
+        private CatalogStatus getVideos(string category, string subCategory)
+        {
+            CatalogStatus status;
+            var authkey = AppConfig.Auth_Token;
+            categoryId = GetCategoryIndex(category);
+            ImageView imgViewLogo = FindViewById<ImageView>(Resource.Id.imgViewThumbnail);
+            if (categoryId == 1)
+            {
+                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.ParseColor("@color/btn_Activate_bg"));
+            }
+            else if (categoryId == 2)
+            {
+                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.ParseColor("@color/btn_Train_bg"));
+            }
+            else
+            {
+                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.ParseColor("@color/btn_Recover_bg"));
+            }
+
+            subcategoryId = 0;
+            string jsonInput = "{\"categoryid\":\"" + categoryId + "\",\"subcategoryid\":\"" + subcategoryId + "\",\"authtoken\":\"" + AppConfig.Auth_Token + "\"}";
+            var catalogJson = ServerCommunication.Login(AppConfig.URL_GET_VIDEOS, jsonInput);
+            catalogResponse = JsonConvert.DeserializeObject<CatalogResponse>(catalogJson);
+            response = catalogResponse.Response;
+
+            if (catalogResponse.Response.status == "success")
+            {
+                status = CatalogStatus.SUCCESS;
+            }
+            else
+            {
+                status = CatalogStatus.FAILED;
+            }
+
+            return status;
+
+        }
+
+        private int GetCategoryIndex(string category)
+        {
+            switch (category)
+            {
+                case "Activity":
+                    categoryId = 1;
+                    break;
+                case "Train":
+                    categoryId = 2;
+                    break;
+                case "Recover":
+                    categoryId = 3;
+                    break;
+                default:
+                    categoryId = 1;
+                    break;
+            }
+            return categoryId;
+        }
+
+
+
+    }
+    public enum CatalogStatus
+    {
+        SUCCESS,
+        FAILED
+
     }
 }

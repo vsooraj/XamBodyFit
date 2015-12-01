@@ -4,17 +4,26 @@
     android:layout_height="match_parent"
     android:id="@+id/parentContainer"
     android:paddingLeft="30dp"
-    android:paddingRight="30dp">
+    android:paddingRight="30dp"
+    android:tileMode="disabled"
+    android:windowNoTitle="true">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <ImageView
             android:src="@drawable/logo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/imgViewLogo"
             android:layout_centerVertical="true" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
         <Button
             android:text="Sign Up with Facebook"
             android:layout_width="match_parent"
@@ -39,6 +48,7 @@
             android:id="@+id/btnAlready"
             android:layout_gravity="center"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
+            android:layout_centerVertical="true"
+            android:background="#000000" />
     </LinearLayout>
 </RelativeLayout>

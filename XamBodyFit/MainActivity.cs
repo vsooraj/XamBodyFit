@@ -5,7 +5,7 @@ using Android.Widget;
 
 namespace XamBodyFit
 {
-    [Activity(Label = "BODYFIT MAIN")]
+    [Activity]
     public class MainActivity : Activity
     {
         private Button btnFacebook, btnEmail, btnAlready;
@@ -13,9 +13,16 @@ namespace XamBodyFit
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
+            try
+            {
+                //Get AuthToken using device and store it in AppConfig
+                ServerCommunication.GetAuthKey();
+            }
+            catch (Exception ex)
+            {
 
-            //Get AuthToken using device and store it in AppConfig
-            ServerCommunication.GetAuthKey();
+                Utilities.ToastMessage(this, Utilities.ToastMessageType.EXCEPTION, ex.Message.ToString());
+            }
 
             //Facebook
             btnFacebook = FindViewById<Button>(Resource.Id.btnFacebook);
