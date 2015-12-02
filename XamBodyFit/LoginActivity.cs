@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace XamBodyFit
 {
-    [Activity]
+    [Activity(Theme = "@style/AppTheme")]
     public class LoginActivity : Activity
     {
         private Button btnLogin, btnForgotPassword;
@@ -45,7 +45,7 @@ namespace XamBodyFit
                 }
                 else if (status == LoginStatus.INVALID_CREDENTIAL)
                 {
-                    Utilities.ToastMessage(this, Utilities.ToastMessageType.INFO, response.text);
+                    Utilities.ToastMessage(this, Utilities.ToastMessageType.INFO, "Please enter a valid email" + response.text);
                 }
                 else
                 {

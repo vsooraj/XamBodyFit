@@ -1,12 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
@@ -18,8 +12,14 @@ namespace XamBodyFit
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            // Create your application here
+            SetContentView(Resource.Layout.item);
+            var videoView = FindViewById<VideoView>(Resource.Id.SampleVideoView);
+            string filePath = Intent.GetStringExtra("MyVideo") ?? "Video not available";
+            filePath = "http://www.webestools.com/page/media/videoTag/BigBuckBunny.mp4";
+            var uri = Android.Net.Uri.Parse(filePath);
+            videoView.SetVideoURI(uri);
+            videoView.Visibility = ViewStates.Visible;
+            videoView.Start();
         }
     }
 }

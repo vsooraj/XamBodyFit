@@ -1,9 +1,10 @@
 ﻿<resources>
   <style name="Theme.Splash" parent="android:Theme">
-    <item name="android:windowBackground">@drawable/splash_background</item>
+    <item name="android:windowBackground">@drawable/bg</item>
     <item name="android:windowNoTitle">true</item>
   </style>
-  <style name="Theme.Main" parent="android:Theme">
+  <style name="AppTheme" parent="android:Theme">
     <item name="android:windowNoTitle">true</item>
+    <item name="android:windowFullscreen">true</item>
   </style>
 </resources>

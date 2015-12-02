@@ -1,6 +1,9 @@
 
 using System.Collections.Generic;
 using Android.App;
+using Android.Content;
+using Android.Database;
+using Android.Net;
 using Android.OS;
 using Android.Widget;
 using Newtonsoft.Json;
@@ -34,6 +37,11 @@ namespace XamBodyFit
                     var title = mItems[e.Position].Title;
                     //Toast.MakeText(this, title, ToastLength.Long).Show();
                     Utilities.ToastMessage(this, Utilities.ToastMessageType.INFO, title);
+                    var videoUrl = mItems[e.Position].FilePath;
+
+                    var itemActivity = new Intent(this, typeof(ItemActivity));
+                    itemActivity.PutExtra("MyVideo", videoUrl);
+                    StartActivity(itemActivity);
                 };
 
             }
@@ -52,18 +60,19 @@ namespace XamBodyFit
             CatalogStatus status;
             var authkey = AppConfig.Auth_Token;
             categoryId = GetCategoryIndex(category);
-            ImageView imgViewLogo = FindViewById<ImageView>(Resource.Id.imgViewThumbnail);
+            ImageView imgViewLogo = FindViewById<ImageView>(Resource.Id.imgViewLogo);
+
             if (categoryId == 1)
             {
-                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.ParseColor("@color/btn_Activate_bg"));
+                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(255, 0, 0));
             }
             else if (categoryId == 2)
             {
-                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.ParseColor("@color/btn_Train_bg"));
+                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(0, 128, 255));
             }
             else
             {
-                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.ParseColor("@color/btn_Recover_bg"));
+                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(174, 180, 4));
             }
 
             subcategoryId = 0;
@@ -103,6 +112,22 @@ namespace XamBodyFit
                     break;
             }
             return categoryId;
+        }
+        private string GetPathToImage(Uri uri)
+        {
+            string path = null;
+            // The projection contains the columns we want to return in our query.
+            string[] projection = new[] { Android.Provider.MediaStore.Images.Media.InterfaceConsts.Data };
+            using (ICursor cursor = ManagedQuery(uri, projection, null, null, null))
+            {
+                if (cursor != null)
+                {
+                    int columnIndex = cursor.GetColumnIndexOrThrow(Android.Provider.MediaStore.Images.Media.InterfaceConsts.Data);
+                    cursor.MoveToFirst();
+                    path = cursor.GetString(columnIndex);
+                }
+            }
+            return path;
         }
 
 

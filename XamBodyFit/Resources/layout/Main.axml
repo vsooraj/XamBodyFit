@@ -8,45 +8,48 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@drawable/logo"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/imgViewLogo"
-            android:layout_centerVertical="true" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
-        <Button
-            android:text="Sign Up with Facebook"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgViewLogo"
+                android:layout_centerVertical="true" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnFacebook"
-            android:layout_gravity="center"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
-        <Button
-            android:text="Sign Up with Email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnEmail"
-            android:layout_gravity="center"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
-        <Button
-            android:text="Already on BODYFIT"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnAlready"
-            android:layout_gravity="center"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:background="#ffffff"
-            android:textColor="#000000" />
+            android:layout_height="wrap_content">
+            <Button
+                android:text="Sign Up with Facebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnFacebook"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+            <Button
+                android:text="Sign Up with Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnEmail"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+            <Button
+                android:text="Already on BODYFIT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnAlready"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textColor="#ffffff"
+                android:background="#000000" />
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/parentContainer"
-    android:paddingLeft="30dp"
-    android:paddingRight="30dp"
-    android:src="@drawable/bg"
-    android:gravity="center">
-    <ImageView
-        android:id="@+id/mainImageView"
-        android:src="@drawable/logo"
+    android:id="@+id/parentContainer">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+        <ImageView
+            android:gravity="center"
+            android:id="@+id/mainImageView"
+            android:src="@drawable/logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

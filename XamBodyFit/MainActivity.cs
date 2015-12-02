@@ -5,7 +5,7 @@ using Android.Widget;
 
 namespace XamBodyFit
 {
-    [Activity(Theme = "@style/Theme.Main")]
+    [Activity(Theme = "@style/AppTheme")]
     public class MainActivity : Activity
     {
         private Button btnFacebook, btnEmail, btnAlready;

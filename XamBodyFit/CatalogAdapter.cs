@@ -39,10 +39,11 @@ namespace XamBodyFit
             {
                 view = LayoutInflater.From(mContext).Inflate(Resource.Layout.catalog_view, null, false);
             }
-            //ImageView imgViewThumbnail = view.FindViewById<ImageView>(Resource.Id.imgViewThumbnail);
-            //var uri = Android.Net.Uri.Parse(mItems[position].Thumbnail);
+            ImageView imgViewThumbnail = view.FindViewById<ImageView>(Resource.Id.imgViewThumbnail);
+            var uri = Android.Net.Uri.Parse(mItems[position].Thumbnail);
             ////imgViewThumbnail.SetImageURI(uri);
             //imgViewThumbnail.SetImageResource(Resource.Drawable.icon);
+            imgViewThumbnail.SetImageURI(uri);
 
             TextView txtTitle = view.FindViewById<TextView>(Resource.Id.txtTitle);
             txtTitle.Text = mItems[position].Title;
