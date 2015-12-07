@@ -35,7 +35,6 @@ namespace XamBodyFit
                 mListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) =>
                 {
                     var title = mItems[e.Position].Title;
-                    //Toast.MakeText(this, title, ToastLength.Long).Show();
                     Utilities.ToastMessage(this, Utilities.ToastMessageType.INFO, title);
                     var videoUrl = mItems[e.Position].FilePath;
 
@@ -77,7 +76,7 @@ namespace XamBodyFit
 
             subcategoryId = 0;
             string jsonInput = "{\"categoryid\":\"" + categoryId + "\",\"subcategoryid\":\"" + subcategoryId + "\",\"authtoken\":\"" + AppConfig.Auth_Token + "\"}";
-            var catalogJson = ServerCommunication.Login(AppConfig.URL_GET_VIDEOS, jsonInput);
+            var catalogJson = ServerCommunication.ServerCallWebRequest(AppConfig.URL_GET_VIDEOS, jsonInput);
             catalogResponse = JsonConvert.DeserializeObject<CatalogResponse>(catalogJson);
             response = catalogResponse.Response;
 

@@ -60,7 +60,7 @@ namespace XamBodyFit
             {
                 //{"firstname" :"sooraj","lastname" : "vidyasagar","password": "1304","authtoken": "7c8c1533878ac624832c35555b5bffdd","emailid" : "sooraj.v@cabotsolutions.com"}
                 string jsonInput = "{\"firstname\":\"" + firstName + "\",\"lastname\":\"" + lastName + "\",\"emailid\":\"" + email + "\",\"password\":\"" + password + "\",\"authtoken\":\"" + AppConfig.Auth_Token + "\"}";
-                var registerJson = ServerCommunication.Register(AppConfig.URL_REGISTER, jsonInput);
+                var registerJson = ServerCommunication.ServerCallWebRequest(AppConfig.URL_REGISTER, jsonInput);
                 RegisterResponse loginResponse = JsonConvert.DeserializeObject<RegisterResponse>(registerJson);
                 if (loginResponse.Response.status == "success")
                 {

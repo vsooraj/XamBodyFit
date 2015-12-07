@@ -65,7 +65,7 @@ namespace XamBodyFit
             if (validation.ValidateEmail(email))
             {
                 string jsonInput = "{\"emailid\":\"" + email + "\",\"deviceid\":\"" + deviceid + "\",\"authtoken\":\"" + AppConfig.Auth_Token + "\"}";
-                var loginJson = ServerCommunication.Login(AppConfig.URL_LOGIN, jsonInput);
+                var loginJson = ServerCommunication.ServerCallWebRequest(AppConfig.URL_FORGOT_PASSWORD, jsonInput);
                 LoginResponse loginResponse = JsonConvert.DeserializeObject<LoginResponse>(loginJson);
                 response = loginResponse.Response;
                 if (loginResponse.Response.status == "success")
@@ -116,7 +116,7 @@ namespace XamBodyFit
             if (validation.ValidateEmail(email) && validation.ValidatePassword(password))
             {
                 string jsonInput = "{\"emailid\":\"" + email + "\",\"password\":\"" + password + "\",\"authtoken\":\"" + AppConfig.Auth_Token + "\"}";
-                var loginJson = ServerCommunication.Login(AppConfig.URL_LOGIN, jsonInput);
+                var loginJson = ServerCommunication.ServerCallWebRequest(AppConfig.URL_LOGIN, jsonInput);
                 LoginResponse loginResponse = JsonConvert.DeserializeObject<LoginResponse>(loginJson);
                 if (loginResponse.Response.status == "success")
                 {

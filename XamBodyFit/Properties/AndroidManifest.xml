@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" 
-          package="XamBodyFit.XamBodyFit" 
-          android:versionCode="1" 
-          android:versionName="1.0" 
-          android:logo="@drawable/launcher">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="XamBodyFit.XamBodyFit" android:versionCode="1" android:versionName="1.0" android:logo="@drawable/launcher">
 	<uses-sdk android:minSdkVersion="17" android:targetSdkVersion="19" />
-	<application 
-    android:label="BODYFIT"
-    android:icon="@drawable/icon">
-    
-  </application>
+	<application android:label="BODYFIT" android:icon="@drawable/icon"></application>
 </manifest>

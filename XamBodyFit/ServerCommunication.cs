@@ -36,17 +36,14 @@ namespace XamBodyFit
             }
             return result;
         }
-        public static string Login(string url, string inputJson)
-        {
-            return ServerCallWebRequest(url, inputJson);
-        }
 
-        private static string ServerCallWebRequest(string url, string inputJson)
+        public static string ServerCallWebRequest(string url, string inputJson)
         {
             string result;
             WebRequest httpWebRequest = WebRequest.Create(url);
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
+            httpWebRequest.Timeout = 10000;
 
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
             {
@@ -62,11 +59,7 @@ namespace XamBodyFit
             }
             return result;
         }
-        public static string Register(string url, string jsonInput)
-        {
-            return ServerCallWebRequest(url, jsonInput);
 
-        }
         private void JsonKeyValue(string tempJson)
         {
             //JObject parsed = JObject.Parse(tempJson);
