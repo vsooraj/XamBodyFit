@@ -1,6 +1,7 @@
 
 using System;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Widget;
 using Newtonsoft.Json;
@@ -28,13 +29,24 @@ namespace XamBodyFit
             txtLastName = FindViewById<EditText>(Resource.Id.txtLastName);
             btnRegister.Click += (object sender, EventArgs e) =>
             {
-
                 try
                 {
                     var status = Register(txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtPassword.Text);
                     if (status == RegisterStatus.SUCCESS)
                     {
-                        StartActivity(typeof(LoginActivity));
+                        User user = new User
+                        {
+                            Id = 1,
+                            FirstName = txtFirstName.Text.Trim(),
+                            LastName = txtLastName.Text.Trim(),
+                            Email = txtEmail.Text.Trim(),
+                            Password = txtPassword.Text.Trim()
+
+                        };
+                        Intent intent = new Intent(this, typeof(MenuActivity));
+                        intent.PutExtra("User", JsonConvert.SerializeObject(user));
+                        user.SaveCacheUserInfo(user);
+                        StartActivity(intent);
                     }
                     else if (status == RegisterStatus.INVALID_CREDENTIAL)
                     {

@@ -6,7 +6,7 @@ using Android.Widget;
 
 namespace XamBodyFit
 {
-    [Activity(Label = "Videos are here.. ")]
+    [Activity(Theme = "@style/AppTheme")]
     public class ItemActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

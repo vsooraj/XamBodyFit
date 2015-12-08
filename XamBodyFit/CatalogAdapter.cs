@@ -40,7 +40,7 @@ namespace XamBodyFit
             {
                 view = LayoutInflater.From(mContext).Inflate(Resource.Layout.catalog_view, null, false);
             }
-            ImageView imgViewThumbnail = view.FindViewById<ImageView>(Resource.Id.imgViewThumbnail);
+            ImageView imgViewThumbnail = view.FindViewById<ImageView>(Resource.Id.imgViewThumbnailTemp);
             Picasso.With(mContext)
             .Load(mItems[position].Thumbnail)
             .Into(imgViewThumbnail);

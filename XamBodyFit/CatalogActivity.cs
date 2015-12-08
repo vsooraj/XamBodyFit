@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 
 namespace XamBodyFit
 {
-    [Activity]
+    [Activity(Theme = "@style/AppTheme")]
     public class CatalogActivity : Activity
     {
         ListView mListView;

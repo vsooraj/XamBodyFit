@@ -5,35 +5,43 @@
     android:background="#000000"
     android:padding="8dp">
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:minWidth="30px"
-        android:minHeight="30px"
-        android:paddingLeft="55dip"
-        android:paddingBottom="2dp"
-        android:paddingTop="2dp">
-        <TextView
-            android:text="Title"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0.0dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imgViewThumbnailTemp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/icon"
+                android:layout_alignParentLeft="true" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtTitle" />
-        <TextView
-            android:text="Description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtDescription" />
-        <TextView
-            android:text="Duration"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtDuration" />
+            android:layout_height="match_parent"
+            android:paddingLeft="5dip"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp">
+            <TextView
+                android:text="Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtTitle" />
+            <TextView
+                android:text="Description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtDescription" />
+            <TextView
+                android:text="Duration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtDuration" />
+        </LinearLayout>
     </LinearLayout>
-    <ImageView
-        android:id="@+id/imgViewThumbnail"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:src="@drawable/icon"
-        android:paddingBottom="2dp"
-        android:layout_alignParentLeft="true" />
 </RelativeLayout>

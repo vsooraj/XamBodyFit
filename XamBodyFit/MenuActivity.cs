@@ -7,7 +7,7 @@ using Android.OS;
 using Android.Widget;
 namespace XamBodyFit
 {
-    [Activity]
+    [Activity(Theme = "@style/AppTheme")]
     public class MenuActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

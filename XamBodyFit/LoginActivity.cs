@@ -5,7 +5,6 @@ using Android.OS;
 using Android.Widget;
 using Newtonsoft.Json;
 
-
 namespace XamBodyFit
 {
     [Activity(Theme = "@style/AppTheme")]
@@ -15,6 +14,7 @@ namespace XamBodyFit
         EditText txtEmail, txtPassword;
         Validation validation = new Validation();
         Response response = new Response();
+        CheckBox cbxRememberMe;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -26,6 +26,7 @@ namespace XamBodyFit
             txtEmail = FindViewById<EditText>(Resource.Id.txtEmail);
             txtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
             btnForgotPassword = FindViewById<Button>(Resource.Id.btnForgotPassword);
+            cbxRememberMe = FindViewById<CheckBox>(Resource.Id.cbxRememberMe);
             btnForgotPassword.Click += btnForgotPassword_Click;
 
         }
@@ -115,11 +116,17 @@ namespace XamBodyFit
             LoginStatus status;
             if (validation.ValidateEmail(email) && validation.ValidatePassword(password))
             {
+
                 string jsonInput = "{\"emailid\":\"" + email + "\",\"password\":\"" + password + "\",\"authtoken\":\"" + AppConfig.Auth_Token + "\"}";
                 var loginJson = ServerCommunication.ServerCallWebRequest(AppConfig.URL_LOGIN, jsonInput);
                 LoginResponse loginResponse = JsonConvert.DeserializeObject<LoginResponse>(loginJson);
                 if (loginResponse.Response.status == "success")
                 {
+                    if (cbxRememberMe.Checked)
+                    {
+                        User user = new User { AuthKey = authKey, Email = email, Password = password };
+                        user.SaveCacheUserInfo(user);
+                    }
                     status = LoginStatus.SUCCESS;
                 }
                 else
@@ -136,13 +143,6 @@ namespace XamBodyFit
         }
 
 
-
-
-
-
-
-
-
     }
     public enum LoginStatus
     {
@@ -153,9 +153,5 @@ namespace XamBodyFit
         PASSWORD_SEND_SUCCESSFULL,
         PASSWORD_SEND_FAILED
     }
-
-
-
-
 
 }

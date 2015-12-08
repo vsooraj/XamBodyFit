@@ -1,7 +1,9 @@
 ﻿using System;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Widget;
+using Newtonsoft.Json;
 
 namespace XamBodyFit
 {
@@ -15,37 +17,41 @@ namespace XamBodyFit
             SetContentView(Resource.Layout.Main);
             try
             {
-                //Get AuthToken using device and store it in AppConfig
                 ServerCommunication.GetAuthKey();
             }
             catch (Exception ex)
             {
-
                 Utilities.ToastMessage(this, Utilities.ToastMessageType.EXCEPTION, ex.Message.ToString());
             }
-
-            //Facebook
             btnFacebook = FindViewById<Button>(Resource.Id.btnFacebook);
             btnFacebook.Click += (object sender, EventArgs e) =>
             {
                 StartActivity(typeof(LoginActivity));
             };
-            //Register with Email
             btnEmail = FindViewById<Button>(Resource.Id.btnEmail);
             btnEmail.Click += (sender, e) =>
             {
                 StartActivity(typeof(RegisterActivity));
             };
-
-            //Already on BODYFIT
             btnAlready = FindViewById<Button>(Resource.Id.btnAlready);
             btnAlready.Click += (sender, e) =>
             {
-                StartActivity(typeof(LoginActivity));
+                User user = new User();
+                var tempUser = user.GetCacheUserInfo();
+
+                if (tempUser.Email == String.Empty || tempUser.Password == String.Empty)
+                {
+                    Intent intent = new Intent(this, typeof(LoginActivity));
+                    this.StartActivity(intent);
+                }
+                else
+                {
+                    Intent intent = new Intent(this, typeof(MenuActivity));
+                    intent.PutExtra("User", JsonConvert.SerializeObject(user));
+                    StartActivity(intent);
+                }
 
             };
-
-
         }
 
 

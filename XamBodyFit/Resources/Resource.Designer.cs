@@ -224,13 +224,13 @@ namespace XamBodyFit
 			public const int btnWatchUs = 2131165206;
 			
 			// aapt resource value: 0x7f07000e
-			public const int chkRememberMe = 2131165198;
+			public const int cbxRememberMe = 2131165198;
 			
 			// aapt resource value: 0x7f070000
 			public const int imgViewLogo = 2131165184;
 			
-			// aapt resource value: 0x7f070009
-			public const int imgViewThumbnail = 2131165193;
+			// aapt resource value: 0x7f070006
+			public const int imgViewThumbnailTemp = 2131165190;
 			
 			// aapt resource value: 0x7f070014
 			public const int mainContainer = 2131165204;
@@ -244,11 +244,11 @@ namespace XamBodyFit
 			// aapt resource value: 0x7f070010
 			public const int parentContainer = 2131165200;
 			
-			// aapt resource value: 0x7f070007
-			public const int txtDescription = 2131165191;
-			
 			// aapt resource value: 0x7f070008
-			public const int txtDuration = 2131165192;
+			public const int txtDescription = 2131165192;
+			
+			// aapt resource value: 0x7f070009
+			public const int txtDuration = 2131165193;
 			
 			// aapt resource value: 0x7f07000b
 			public const int txtEmail = 2131165195;
@@ -262,8 +262,8 @@ namespace XamBodyFit
 			// aapt resource value: 0x7f07000c
 			public const int txtPassword = 2131165196;
 			
-			// aapt resource value: 0x7f070006
-			public const int txtTitle = 2131165190;
+			// aapt resource value: 0x7f070007
+			public const int txtTitle = 2131165191;
 			
 			static Id()
 			{
