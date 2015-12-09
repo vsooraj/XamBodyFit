@@ -3,16 +3,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:id="@+id/mainContainer"
-    android:paddingLeft="5dp"
-    android:paddingRight="5dp"
-    android:weightSum="1">
+    android:id="@+id/mainContainer">
     <LinearLayout
         android:id="@+id/topContainer"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.2"
+        android:layout_weight=".2"
         android:gravity="center">
         <ImageView
             android:src="@drawable/logo"
@@ -20,16 +17,14 @@
             android:layout_height="wrap_content"
             android:id="@+id/imgViewLogo"
             android:background="@color/btn_Activate_bg"
-            android:paddingBottom="5dp"
-            android:layout_gravity="center"
-            android:layout_marginRight="0.0dp" />
+            android:layout_gravity="center" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/middleContainer"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.6"
+        android:layout_height="fill_parent"
+        android:layout_weight=".75"
         android:gravity="center_vertical">
         <Button
             android:layout_width="match_parent"
@@ -37,19 +32,21 @@
             android:id="@+id/btnActivate"
             android:background="@color/btn_Activate_bg"
             android:text="ACTIVATE"
-            android:layout_marginTop="2dp"
+            android:layout_weight="1"
             android:drawableBottom="@drawable/activate" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="150.0dp"
             android:id="@+id/btnTrain"
+            android:layout_weight="1"
             android:background="@color/btn_Train_bg"
             android:text="TRAIN"
             android:drawableBottom="@drawable/train" />
         <Button
+            android:id="@+id/btnRecover"
             android:layout_width="match_parent"
             android:layout_height="150.0dp"
-            android:id="@+id/btnRecover"
+            android:layout_weight="1"
             android:background="@color/btn_Recover_bg"
             android:text="RECOVER"
             android:drawableBottom="@drawable/recover" />
@@ -59,7 +56,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.2"
+        android:layout_weight="0.1"
         android:gravity="center_vertical"
         android:layout_gravity="fill_horizontal">
         <LinearLayout
@@ -67,25 +64,21 @@
             android:orientation="horizontal"
             android:background="@android:drawable/bottom_bar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:weightSum="1">
+            android:layout_height="wrap_content">
             <Button
                 android:id="@+id/btnFacebookLike"
                 android:background="@color/btn_FacebookLike_bg"
                 android:text="Like"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".50"
-                android:gravity="center" />
+                android:layout_height="45.0dp"
+                android:layout_weight=".5" />
             <Button
                 android:id="@+id/btnWatchUs"
                 android:background="@color/btn_WatchUs_bg"
                 android:text="Watch Us"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".50"
-                android:gravity="center" />
+                android:layout_height="45.0dp"
+                android:layout_weight=".5" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
