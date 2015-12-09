@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace XamBodyFit
 {
-    [Activity]
+    [Activity(Theme = "@style/AppTheme")]
     public class RegisterActivity : Activity
     {
         private Button btnRegister;

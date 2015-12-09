@@ -23,7 +23,7 @@ namespace XamBodyFit
             {
                 Utilities.ToastMessage(this, Utilities.ToastMessageType.EXCEPTION, ex.Message.ToString());
             }
-            btnFacebook = FindViewById<Button>(Resource.Id.btnFacebook);
+            btnFacebook = FindViewById<Button>(Resource.Id.btnFacebookTemp);
             btnFacebook.Click += (object sender, EventArgs e) =>
             {
                 StartActivity(typeof(LoginActivity));

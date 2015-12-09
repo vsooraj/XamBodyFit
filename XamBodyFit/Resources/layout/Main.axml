@@ -6,50 +6,53 @@
     android:paddingLeft="30dp"
     android:paddingRight="30dp">
     <LinearLayout
+        android:id="@+id/mainContainer"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
+            android:id="@+id/topContainer"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
+                android:id="@+id/imgViewLogo"
                 android:src="@drawable/logo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/imgViewLogo"
                 android:layout_centerVertical="true" />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/middleContainer"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
             <Button
+                android:id="@+id/btnFacebookTemp"
                 android:text="Sign Up with Facebook"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnFacebook"
                 android:layout_gravity="center"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true" />
             <Button
+                android:id="@+id/btnEmail"
                 android:text="Sign Up with Email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnEmail"
                 android:layout_gravity="center"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true" />
             <Button
+                android:id="@+id/btnAlready"
                 android:text="Already on BODYFIT"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnAlready"
                 android:layout_gravity="center"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:textColor="#ffffff"
-                android:background="#000000" />
+                android:textColor="#ffffff" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

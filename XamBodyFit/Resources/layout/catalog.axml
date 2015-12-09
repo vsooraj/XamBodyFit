@@ -36,7 +36,7 @@
             android:layout_width="0.0dip"
             android:layout_height="fill_parent"
             android:background="@color/btn_Recover_bg"
-            android:text="Recover"
+            android:text="RECOVER"
             android:layout_weight="1.0" />
     </LinearLayout>
     <LinearLayout

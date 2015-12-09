@@ -1,9 +1,8 @@
 
+using System;
 using System.Collections.Generic;
 using Android.App;
 using Android.Content;
-using Android.Database;
-using Android.Net;
 using Android.OS;
 using Android.Widget;
 using Newtonsoft.Json;
@@ -14,7 +13,7 @@ namespace XamBodyFit
     public class CatalogActivity : Activity
     {
         ListView mListView;
-        int categoryId, subcategoryId;
+        int categoryId, subCategoryId;
         Response response = new Response();
         List<Video> mItems;
         CatalogResponse catalogResponse;
@@ -23,10 +22,30 @@ namespace XamBodyFit
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.catalog);
             mListView = FindViewById<ListView>(Resource.Id.myListView);
-            string category = Intent.GetStringExtra("MyData") ?? "Data not available";
-            string subCategory = null;
-            Toast.MakeText(this, category, ToastLength.Short).Show();
-            CatalogStatus status = getVideos(category, subCategory);
+            categoryId = int.Parse(Intent.GetStringExtra("CategoryId") ?? "0");
+
+            Button btnActivate = FindViewById<Button>(Resource.Id.btnActivate);
+            Button btnTrain = FindViewById<Button>(Resource.Id.btnTrain);
+            Button btnRecover = FindViewById<Button>(Resource.Id.btnRecover);
+
+            btnActivate.Click += (object sender, EventArgs args) =>
+            {
+                GetList(1, subCategoryId);
+            };
+            btnTrain.Click += (object sender, EventArgs e) =>
+            {
+                GetList(2, subCategoryId);
+            };
+            SetTab(categoryId);
+        }
+
+        private void btnRecover_Click(object sender, EventArgs e)
+        {
+            GetList(3, subCategoryId);
+        }
+        private void GetList(int categoryId, int subCategoryId)
+        {
+            CatalogStatus status = getVideos(categoryId, subCategoryId);
             if (status == CatalogStatus.SUCCESS)
             {
                 mItems = catalogResponse.Videos;
@@ -54,11 +73,12 @@ namespace XamBodyFit
             }
         }
 
-        private CatalogStatus getVideos(string category, string subCategory)
+
+
+        private CatalogStatus getVideos(int categoryId, int subcategoryId)
         {
             CatalogStatus status;
             var authkey = AppConfig.Auth_Token;
-            categoryId = GetCategoryIndex(category);
             ImageView imgViewLogo = FindViewById<ImageView>(Resource.Id.imgViewLogo);
 
             if (categoryId == 1)
@@ -88,49 +108,32 @@ namespace XamBodyFit
             {
                 status = CatalogStatus.FAILED;
             }
-
             return status;
-
         }
 
-        private int GetCategoryIndex(string category)
+        private void SetTab(int categoryId)
         {
-            switch (category)
+            GetList(categoryId, subCategoryId);
+            ImageView imgViewLogo = FindViewById<ImageView>(Resource.Id.imgViewLogo);
+            Button btnActivate = FindViewById<Button>(Resource.Id.btnActivate);
+            Button btnTrain = FindViewById<Button>(Resource.Id.btnTrain);
+            Button btnRecover = FindViewById<Button>(Resource.Id.btnRecover);
+            if (categoryId == 1)
             {
-                case "Activity":
-                    categoryId = 1;
-                    break;
-                case "Train":
-                    categoryId = 2;
-                    break;
-                case "Recover":
-                    categoryId = 3;
-                    break;
-                default:
-                    categoryId = 1;
-                    break;
+                Toast.MakeText(this, "ACTIVATE", ToastLength.Short).Show();
+                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(255, 0, 0));
             }
-            return categoryId;
-        }
-        private string GetPathToImage(Uri uri)
-        {
-            string path = null;
-            // The projection contains the columns we want to return in our query.
-            string[] projection = new[] { Android.Provider.MediaStore.Images.Media.InterfaceConsts.Data };
-            using (ICursor cursor = ManagedQuery(uri, projection, null, null, null))
+            else if (categoryId == 2)
             {
-                if (cursor != null)
-                {
-                    int columnIndex = cursor.GetColumnIndexOrThrow(Android.Provider.MediaStore.Images.Media.InterfaceConsts.Data);
-                    cursor.MoveToFirst();
-                    path = cursor.GetString(columnIndex);
-                }
+                Toast.MakeText(this, "TRAIN", ToastLength.Short).Show();
+                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(0, 128, 255));
             }
-            return path;
+            else
+            {
+                Toast.MakeText(this, "RECOVER", ToastLength.Short).Show();
+                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(174, 180, 4));
+            }
         }
-
-
-
     }
     public enum CatalogStatus
     {
