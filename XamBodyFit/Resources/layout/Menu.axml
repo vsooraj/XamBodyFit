@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="match_parent"
     android:id="@+id/mainContainer">
     <LinearLayout
         android:id="@+id/topContainer"
@@ -17,7 +17,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/imgViewLogo"
             android:background="@color/btn_Activate_bg"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:layout_marginBottom="2dp" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/middleContainer"
@@ -62,7 +63,7 @@
         <LinearLayout
             android:id="@+id/bottomSubContainer"
             android:orientation="horizontal"
-            android:background="@android:drawable/bottom_bar"
+            android:background="@drawable/likewatch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button

@@ -59,6 +59,7 @@ namespace XamBodyFit
 
                     var itemActivity = new Intent(this, typeof(ItemActivity));
                     itemActivity.PutExtra("MyVideo", videoUrl);
+                    itemActivity.PutExtra("CategoryId", categoryId);
                     StartActivity(itemActivity);
                 };
 

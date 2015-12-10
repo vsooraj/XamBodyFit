@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="fill_parent"
     android:background="@color/bg_register"
     android:gravity="center"
     android:orientation="vertical"
@@ -72,10 +72,9 @@
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dip"
             android:background="#AEB404"
             android:text="@string/btn_register"
+            android:layout_height="45.0dp"
             android:textColor="@color/white" />
     </LinearLayout>
 </LinearLayout>

@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamBodyFitDroid", "XamBodyFit\XamBodyFitDroid.csproj", "{E9B7CFCD-86D4-4B98-8726-C7A06B9F94AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodyfitLibrary", "BodyfitLibrary\BodyfitLibrary.csproj", "{65E2740D-EAB9-47BA-B791-ED0165E5AF83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{E9B7CFCD-86D4-4B98-8726-C7A06B9F94AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9B7CFCD-86D4-4B98-8726-C7A06B9F94AE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E9B7CFCD-86D4-4B98-8726-C7A06B9F94AE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{65E2740D-EAB9-47BA-B791-ED0165E5AF83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65E2740D-EAB9-47BA-B791-ED0165E5AF83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65E2740D-EAB9-47BA-B791-ED0165E5AF83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65E2740D-EAB9-47BA-B791-ED0165E5AF83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

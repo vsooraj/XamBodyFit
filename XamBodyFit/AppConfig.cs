@@ -6,7 +6,8 @@ namespace XamBodyFit
 
     public class AppConfig
     {
-        public static string uri = "http://dev2.cabotprojects.com/bodyfitAWS/webservices?procedure=";
+        public static string uri = "http://dev2.cabotprojects.com/bodyfit-cms/webservices?procedure=";
+
         public static string Auth_Token;
 
         public AppConfig(string auth_Token)
