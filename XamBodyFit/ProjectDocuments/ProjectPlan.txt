@@ -30,4 +30,5 @@ Xamarin Task Plan version 1.0
   ACTIVATE|TRAIN|RECOVER 
   List Videos on selected Category 
   Integrate Video Player
+9.Drawer Layout for Menu
 
