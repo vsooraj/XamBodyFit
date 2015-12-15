@@ -184,11 +184,11 @@ namespace XamBodyFit
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f07000f
-			public const int SampleVideoView = 2131165199;
+			// aapt resource value: 0x7f07000e
+			public const int SampleVideoView = 2131165198;
 			
-			// aapt resource value: 0x7f070003
-			public const int TextView01 = 2131165187;
+			// aapt resource value: 0x7f070002
+			public const int TextView01 = 2131165186;
 			
 			// aapt resource value: 0x7f070020
 			public const int bottomContainer = 2131165216;
@@ -196,14 +196,17 @@ namespace XamBodyFit
 			// aapt resource value: 0x7f070021
 			public const int bottomSubContainer = 2131165217;
 			
-			// aapt resource value: 0x7f070004
-			public const int btnActivate = 2131165188;
+			// aapt resource value: 0x7f070003
+			public const int btnActivate = 2131165187;
+			
+			// aapt resource value: 0x7f070024
+			public const int btnActivatem = 2131165220;
 			
 			// aapt resource value: 0x7f07001e
 			public const int btnAlready = 2131165214;
 			
-			// aapt resource value: 0x7f070012
-			public const int btnBack = 2131165202;
+			// aapt resource value: 0x7f070011
+			public const int btnBack = 2131165201;
 			
 			// aapt resource value: 0x7f07001d
 			public const int btnEmail = 2131165213;
@@ -220,20 +223,26 @@ namespace XamBodyFit
 			// aapt resource value: 0x7f070015
 			public const int btnLogin = 2131165205;
 			
-			// aapt resource value: 0x7f070011
-			public const int btnPlay = 2131165201;
-			
-			// aapt resource value: 0x7f070006
-			public const int btnRecover = 2131165190;
-			
-			// aapt resource value: 0x7f070026
-			public const int btnRegister = 2131165222;
-			
 			// aapt resource value: 0x7f070010
-			public const int btnStop = 2131165200;
+			public const int btnPlay = 2131165200;
 			
 			// aapt resource value: 0x7f070005
-			public const int btnTrain = 2131165189;
+			public const int btnRecover = 2131165189;
+			
+			// aapt resource value: 0x7f070026
+			public const int btnRecoverm = 2131165222;
+			
+			// aapt resource value: 0x7f070029
+			public const int btnRegister = 2131165225;
+			
+			// aapt resource value: 0x7f07000f
+			public const int btnStop = 2131165199;
+			
+			// aapt resource value: 0x7f070004
+			public const int btnTrain = 2131165188;
+			
+			// aapt resource value: 0x7f070025
+			public const int btnTrainm = 2131165221;
 			
 			// aapt resource value: 0x7f070023
 			public const int btnWatchUs = 2131165219;
@@ -244,26 +253,26 @@ namespace XamBodyFit
 			// aapt resource value: 0x7f070001
 			public const int content_frame = 2131165185;
 			
-			// aapt resource value: 0x7f07000b
-			public const int imagePlayIcon = 2131165195;
-			
-			// aapt resource value: 0x7f070009
-			public const int imageVideoThumb = 2131165193;
-			
-			// aapt resource value: 0x7f070002
-			public const int imgViewLogo = 2131165186;
-			
 			// aapt resource value: 0x7f07000a
-			public const int imgViewThumbnailTemp = 2131165194;
+			public const int imagePlayIcon = 2131165194;
 			
 			// aapt resource value: 0x7f070008
-			public const int leftListView = 2131165192;
+			public const int imageVideoThumb = 2131165192;
+			
+			// aapt resource value: 0x7f070012
+			public const int imgViewLogo = 2131165202;
+			
+			// aapt resource value: 0x7f070009
+			public const int imgViewThumbnailTemp = 2131165193;
+			
+			// aapt resource value: 0x7f070007
+			public const int leftListView = 2131165191;
 			
 			// aapt resource value: 0x7f070019
 			public const int mainContainer = 2131165209;
 			
-			// aapt resource value: 0x7f070027
-			public const int mainImageView = 2131165223;
+			// aapt resource value: 0x7f07002a
+			public const int mainImageView = 2131165226;
 			
 			// aapt resource value: 0x7f07001b
 			public const int middleContainer = 2131165211;
@@ -271,8 +280,8 @@ namespace XamBodyFit
 			// aapt resource value: 0x7f070000
 			public const int myDrawer = 2131165184;
 			
-			// aapt resource value: 0x7f070007
-			public const int myListView = 2131165191;
+			// aapt resource value: 0x7f070006
+			public const int myListView = 2131165190;
 			
 			// aapt resource value: 0x7f070018
 			public const int parentContainer = 2131165208;
@@ -283,26 +292,26 @@ namespace XamBodyFit
 			// aapt resource value: 0x7f07001f
 			public const int tvText = 2131165215;
 			
-			// aapt resource value: 0x7f07000d
-			public const int txtDescription = 2131165197;
+			// aapt resource value: 0x7f07000c
+			public const int txtDescription = 2131165196;
 			
-			// aapt resource value: 0x7f07000e
-			public const int txtDuration = 2131165198;
+			// aapt resource value: 0x7f07000d
+			public const int txtDuration = 2131165197;
 			
 			// aapt resource value: 0x7f070013
 			public const int txtEmail = 2131165203;
 			
-			// aapt resource value: 0x7f070024
-			public const int txtFirstName = 2131165220;
+			// aapt resource value: 0x7f070027
+			public const int txtFirstName = 2131165223;
 			
-			// aapt resource value: 0x7f070025
-			public const int txtLastName = 2131165221;
+			// aapt resource value: 0x7f070028
+			public const int txtLastName = 2131165224;
 			
 			// aapt resource value: 0x7f070014
 			public const int txtPassword = 2131165204;
 			
-			// aapt resource value: 0x7f07000c
-			public const int txtTitle = 2131165196;
+			// aapt resource value: 0x7f07000b
+			public const int txtTitle = 2131165195;
 			
 			static Id()
 			{

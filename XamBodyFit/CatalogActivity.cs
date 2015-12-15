@@ -144,20 +144,20 @@ namespace XamBodyFit
         {
             CatalogStatus status;
             var authkey = AppConfig.Auth_Token;
-            ImageView imgViewLogo = FindViewById<ImageView>(Resource.Id.imgViewLogo);
+            //ImageView imgViewLogo = FindViewById<ImageView>(Resource.Id.imgViewLogo);
 
-            if (categoryId == 1)
-            {
-                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(255, 0, 0));
-            }
-            else if (categoryId == 2)
-            {
-                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(0, 128, 255));
-            }
-            else
-            {
-                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(174, 180, 4));
-            }
+            //if (categoryId == 1)
+            //{
+            //    imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(255, 0, 0));
+            //}
+            //else if (categoryId == 2)
+            //{
+            //    imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(0, 128, 255));
+            //}
+            //else
+            //{
+            //    imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(174, 180, 4));
+            //}
 
             subcategoryId = 0;
             string jsonInput = "{\"categoryid\":\"" + categoryId + "\",\"subcategoryid\":\"" + subcategoryId + "\",\"authtoken\":\"" + AppConfig.Auth_Token + "\"}";
@@ -179,25 +179,25 @@ namespace XamBodyFit
         private void SetTab(int categoryId)
         {
             GetList(categoryId, subCategoryId);
-            ImageView imgViewLogo = FindViewById<ImageView>(Resource.Id.imgViewLogo);
-            Button btnActivate = FindViewById<Button>(Resource.Id.btnActivate);
-            Button btnTrain = FindViewById<Button>(Resource.Id.btnTrain);
-            Button btnRecover = FindViewById<Button>(Resource.Id.btnRecover);
-            if (categoryId == 1)
-            {
-                Toast.MakeText(this, "ACTIVATE", ToastLength.Short).Show();
-                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(255, 0, 0));
-            }
-            else if (categoryId == 2)
-            {
-                Toast.MakeText(this, "TRAIN", ToastLength.Short).Show();
-                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(0, 128, 255));
-            }
-            else
-            {
-                Toast.MakeText(this, "RECOVER", ToastLength.Short).Show();
-                imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(174, 180, 4));
-            }
+            //ImageView imgViewLogo = FindViewById<ImageView>(Resource.Id.imgViewLogo);
+            //Button btnActivate = FindViewById<Button>(Resource.Id.btnActivate);
+            //Button btnTrain = FindViewById<Button>(Resource.Id.btnTrain);
+            //Button btnRecover = FindViewById<Button>(Resource.Id.btnRecover);
+            //if (categoryId == 1)
+            //{
+            //    Toast.MakeText(this, "ACTIVATE", ToastLength.Short).Show();
+            //    imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(255, 0, 0));
+            //}
+            //else if (categoryId == 2)
+            //{
+            //    Toast.MakeText(this, "TRAIN", ToastLength.Short).Show();
+            //    imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(0, 128, 255));
+            //}
+            //else
+            //{
+            //    Toast.MakeText(this, "RECOVER", ToastLength.Short).Show();
+            //    imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(174, 180, 4));
+            //}
         }
     }
     public enum CatalogStatus

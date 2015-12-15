@@ -30,7 +30,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="140.0dp"
-            android:id="@+id/btnActivate"
+            android:id="@+id/btnActivatem"
             android:background="@color/btn_Activate_bg"
             android:text="ACTIVATE"
             android:layout_weight="1"
@@ -38,13 +38,13 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="150.0dp"
-            android:id="@+id/btnTrain"
+            android:id="@+id/btnTrainm"
             android:layout_weight="1"
             android:background="@color/btn_Train_bg"
             android:text="TRAIN"
             android:drawableBottom="@drawable/train" />
         <Button
-            android:id="@+id/btnRecover"
+            android:id="@+id/btnRecoverm"
             android:layout_width="match_parent"
             android:layout_height="150.0dp"
             android:layout_weight="1"

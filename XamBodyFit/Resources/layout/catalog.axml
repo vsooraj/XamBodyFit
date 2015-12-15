@@ -12,14 +12,6 @@
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent">
-            <ImageView
-                android:src="@drawable/logo"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/imgViewLogo"
-                android:paddingBottom="2dp"
-                android:background="@color/btn_Activate_bg"
-                android:layout_centerVertical="true" />
             <LinearLayout
                 android:orientation="horizontal"
                 android:background="@android:drawable/bottom_bar"
