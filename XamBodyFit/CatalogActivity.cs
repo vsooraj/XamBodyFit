@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.OS;
+using Android.Support.V4.App;
+using Android.Support.V4.Widget;
+using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
 
 namespace XamBodyFit
 {
-    [Activity(Theme = "@style/AppTheme")]
+    [Activity(Theme = "@style/CustomActionBarTheme")]
     public class CatalogActivity : Activity
     {
         ListView mListView;
@@ -17,16 +20,44 @@ namespace XamBodyFit
         Response response = new Response();
         List<Video> mItems;
         CatalogResponse catalogResponse;
+
+        #region DrawableLayout variables
+        List<string> leftItems = new List<string>();
+        ArrayAdapter leftAdapater;
+        ListView leftListView;
+        DrawerLayout drawerLayout;
+        ActionBarDrawerToggle drawerToggle;
+        Dictionary<string, string> _navigation = new Dictionary<string, string>();
+
+        #endregion
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
             SetContentView(Resource.Layout.catalog);
             mListView = FindViewById<ListView>(Resource.Id.myListView);
+
             categoryId = int.Parse(Intent.GetStringExtra("CategoryId") ?? "0");
 
             Button btnActivate = FindViewById<Button>(Resource.Id.btnActivate);
             Button btnTrain = FindViewById<Button>(Resource.Id.btnTrain);
             Button btnRecover = FindViewById<Button>(Resource.Id.btnRecover);
+            #region DrawableLayout
+            drawerLayout = FindViewById<DrawerLayout>(Resource.Id.myDrawer);
+            leftListView = FindViewById<ListView>(Resource.Id.leftListView);
+            leftItems = MenuRepository.GetMenuItems();
+            _navigation = MenuRepository.GetMenuItemsWithUri();
+            drawerToggle = new MyActionBarDrawerToggle(this, drawerLayout, Resource.Drawable.menu, Resource.String.open_drawer, Resource.String.close_drawer);
+
+            leftAdapater = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, leftItems);
+            leftListView.Adapter = leftAdapater;
+            leftListView.ItemClick += (sender, args) => leftListItemClicked(args.Position);
+            drawerLayout.SetDrawerListener(drawerToggle);
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            ActionBar.SetHomeButtonEnabled(true);
+            ActionBar.SetDisplayShowTitleEnabled(true);
+            #endregion
 
             btnActivate.Click += (object sender, EventArgs args) =>
             {
@@ -37,6 +68,39 @@ namespace XamBodyFit
                 GetList(2, subCategoryId);
             };
             SetTab(categoryId);
+        }
+        protected override void OnPostCreate(Bundle savedInstanceState)
+        {
+            base.OnPostCreate(savedInstanceState);
+            drawerToggle.SyncState();
+        }
+        public override bool OnOptionsItemSelected(IMenuItem items)
+        {
+            if (drawerToggle.OnOptionsItemSelected(items))
+            {
+                return true;
+            }
+            return base.OnOptionsItemSelected(items);
+        }
+
+        private void leftListItemClicked(int p)
+        {
+            var tempItem = leftItems[p];
+            //Toast.MakeText(this, tempItem, ToastLength.Short).Show();
+            string url;
+            if (tempItem != "Exit")
+            {
+                if (_navigation.TryGetValue(tempItem, out url))
+                {
+                    var uri = Android.Net.Uri.Parse(url);
+                    var intent = new Intent(Intent.ActionView, uri);
+                    StartActivity(intent);
+                }
+            }
+            else
+            {
+                Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+            }
         }
 
         private void btnRecover_Click(object sender, EventArgs e)
