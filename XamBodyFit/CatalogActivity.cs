@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Android.App;
 using Android.Content;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Support.V4.App;
 using Android.Support.V4.Widget;
@@ -15,6 +16,7 @@ namespace XamBodyFit
     [Activity(Theme = "@style/CustomActionBarTheme")]
     public class CatalogActivity : Activity
     {
+        private Activity activity;
         ListView mListView;
         int categoryId, subCategoryId;
         Response response = new Response();
@@ -57,6 +59,8 @@ namespace XamBodyFit
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             ActionBar.SetHomeButtonEnabled(true);
             ActionBar.SetDisplayShowTitleEnabled(true);
+            ActionBar.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.logo));
+
             #endregion
 
             btnActivate.Click += (object sender, EventArgs args) =>
@@ -67,6 +71,10 @@ namespace XamBodyFit
             {
                 GetList(2, subCategoryId);
             };
+            btnRecover.Click += (object sender, EventArgs e) =>
+            {
+                GetList(3, subCategoryId);
+            };
             SetTab(categoryId);
         }
         protected override void OnPostCreate(Bundle savedInstanceState)
@@ -74,6 +82,13 @@ namespace XamBodyFit
             base.OnPostCreate(savedInstanceState);
             drawerToggle.SyncState();
         }
+        private void SetLogo()
+        {
+            if (activity == null) return;
+            activity.ActionBar.SetDisplayShowCustomEnabled(false);
+            activity.ActionBar.SetDisplayShowHomeEnabled(true);
+        }
+
         public override bool OnOptionsItemSelected(IMenuItem items)
         {
             if (drawerToggle.OnOptionsItemSelected(items))
@@ -103,10 +118,6 @@ namespace XamBodyFit
             }
         }
 
-        private void btnRecover_Click(object sender, EventArgs e)
-        {
-            GetList(3, subCategoryId);
-        }
         private void GetList(int categoryId, int subCategoryId)
         {
             CatalogStatus status = getVideos(categoryId, subCategoryId);
@@ -124,6 +135,7 @@ namespace XamBodyFit
                     var itemActivity = new Intent(this, typeof(ItemActivity));
                     itemActivity.PutExtra("MyVideo", videoUrl);
                     itemActivity.PutExtra("CategoryId", categoryId);
+                    itemActivity.PutExtra("SubCategoryId", subCategoryId);
                     StartActivity(itemActivity);
                 };
 
@@ -144,20 +156,22 @@ namespace XamBodyFit
         {
             CatalogStatus status;
             var authkey = AppConfig.Auth_Token;
-            //ImageView imgViewLogo = FindViewById<ImageView>(Resource.Id.imgViewLogo);
 
-            //if (categoryId == 1)
-            //{
-            //    imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(255, 0, 0));
-            //}
-            //else if (categoryId == 2)
-            //{
-            //    imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(0, 128, 255));
-            //}
-            //else
-            //{
-            //    imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(174, 180, 4));
-            //}
+            if (categoryId == 1)
+            {
+                ColorDrawable colorDrawable = new ColorDrawable(Android.Graphics.Color.Rgb(255, 0, 0));
+                ActionBar.SetBackgroundDrawable(colorDrawable);
+            }
+            else if (categoryId == 2)
+            {
+                ColorDrawable colorDrawable = new ColorDrawable(Android.Graphics.Color.Rgb(0, 128, 255));
+                ActionBar.SetBackgroundDrawable(colorDrawable);
+            }
+            else if (categoryId == 3)
+            {
+                ColorDrawable colorDrawable = new ColorDrawable(Android.Graphics.Color.Rgb(174, 180, 4));
+                ActionBar.SetBackgroundDrawable(colorDrawable);
+            }
 
             subcategoryId = 0;
             string jsonInput = "{\"categoryid\":\"" + categoryId + "\",\"subcategoryid\":\"" + subcategoryId + "\",\"authtoken\":\"" + AppConfig.Auth_Token + "\"}";
@@ -179,25 +193,25 @@ namespace XamBodyFit
         private void SetTab(int categoryId)
         {
             GetList(categoryId, subCategoryId);
-            //ImageView imgViewLogo = FindViewById<ImageView>(Resource.Id.imgViewLogo);
-            //Button btnActivate = FindViewById<Button>(Resource.Id.btnActivate);
-            //Button btnTrain = FindViewById<Button>(Resource.Id.btnTrain);
-            //Button btnRecover = FindViewById<Button>(Resource.Id.btnRecover);
-            //if (categoryId == 1)
-            //{
-            //    Toast.MakeText(this, "ACTIVATE", ToastLength.Short).Show();
-            //    imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(255, 0, 0));
-            //}
-            //else if (categoryId == 2)
-            //{
-            //    Toast.MakeText(this, "TRAIN", ToastLength.Short).Show();
-            //    imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(0, 128, 255));
-            //}
-            //else
-            //{
-            //    Toast.MakeText(this, "RECOVER", ToastLength.Short).Show();
-            //    imgViewLogo.SetBackgroundColor(Android.Graphics.Color.Rgb(174, 180, 4));
-            //}
+
+            if (categoryId == 1)
+            {
+                ColorDrawable colorDrawable = new ColorDrawable(Android.Graphics.Color.Rgb(255, 0, 0));
+                ActionBar.SetBackgroundDrawable(colorDrawable);
+                Toast.MakeText(this, "ACTIVATE", ToastLength.Short).Show();
+            }
+            else if (categoryId == 2)
+            {
+                ColorDrawable colorDrawable = new ColorDrawable(Android.Graphics.Color.Rgb(0, 128, 255));
+                ActionBar.SetBackgroundDrawable(colorDrawable);
+                Toast.MakeText(this, "TRAIN", ToastLength.Short).Show();
+            }
+            else if (categoryId == 3)
+            {
+                ColorDrawable colorDrawable = new ColorDrawable(Android.Graphics.Color.Rgb(174, 180, 4));
+                ActionBar.SetBackgroundDrawable(colorDrawable);
+                Toast.MakeText(this, "RECOVER", ToastLength.Short).Show();
+            }
         }
     }
     public enum CatalogStatus

@@ -24,7 +24,6 @@ namespace XamBodyFit
             mbtnTrain.Click += btnTrain_Click;
             mbtnRecover.Click += btnRecover_Click;
             btnFacebookLike.Click += btnFacebookLike_Click;
-
         }
 
         private void btnFacebookLike_Click(object sender, EventArgs e)
@@ -42,25 +41,18 @@ namespace XamBodyFit
 
         private void btnRecover_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException(); var activity = new Intent(this, typeof(CatalogActivity));
-            activity.PutExtra("CategoryId", "3");
-            StartActivity(activity);
+            Navigate("3");
         }
 
         private void btnTrain_Click(object sender, EventArgs e)
         {
-            var activity = new Intent(this, typeof(CatalogActivity));
-            activity.PutExtra("CategoryId", "2");
-            StartActivity(activity);
+            Navigate("2");
         }
 
         private void btnActivate_Click(object sender, EventArgs e)
         {
-            var activity = new Intent(this, typeof(CatalogActivity));
-            activity.PutExtra("CategoryId", "1");
-            StartActivity(activity);
+            Navigate("1");
         }
-
 
         private void Navigate(string navigatorValue)
         {

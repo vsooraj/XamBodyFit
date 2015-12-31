@@ -14,14 +14,11 @@ namespace XamBodyFit
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
-            try
-            {
-                ServerCommunication.GetAuthKey();
-            }
-            catch (Exception ex)
-            {
-                Utilities.ToastMessage(this, Utilities.ToastMessageType.EXCEPTION, ex.Message.ToString());
-            }
+            var result = ServerCommunication.GetAuthKey();
+            if (result.Contains("EXCEPTION"))
+                Utilities.ToastMessage(this, Utilities.ToastMessageType.EXCEPTION, result);
+            else
+                Utilities.ToastMessage(this, Utilities.ToastMessageType.INFO, result);
             Button btnFacebookm = FindViewById<Button>(Resource.Id.btnFacebookTemp);
             btnFacebookm.Click += (object sender, EventArgs e) =>
             {

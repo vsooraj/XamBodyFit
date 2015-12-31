@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Net;
 using Newtonsoft.Json;
@@ -6,14 +7,25 @@ namespace XamBodyFit
 {
     public class ServerCommunication
     {
-        public static void GetAuthKey()
+        public static string GetAuthKey()
         {
-            Device device = new Device();
-            device.GetDeviceId();
-            string inputJson = "{\"deviceid\":\"" + device.Id + "\"}";
-            var tempJson = Initiate(device.Id, AppConfig.URL_INITIALIZE, inputJson);
-            RootObject rootObject = JsonConvert.DeserializeObject<RootObject>(tempJson);
-            AppConfig appConfig = new AppConfig(rootObject.authtoken);
+            string result;
+            RootObject rootObject;
+            try
+            {
+                Device device = new Device();
+                device.GetDeviceId();
+                string inputJson = "{\"deviceid\":\"" + device.Id + "\"}";
+                var tempJson = Initiate(device.Id, AppConfig.URL_INITIALIZE, inputJson);
+                rootObject = JsonConvert.DeserializeObject<RootObject>(tempJson);
+                AppConfig appConfig = new AppConfig(rootObject.authtoken);
+                result = "INFO:" + rootObject.authtoken.ToString();
+            }
+            catch (Exception exception)
+            {
+                result = "EXCEPTION:" + exception.Message.ToString();
+            }
+            return result;
         }
         public static string Initiate(string deviceId, string url, string inputJson)
         {
@@ -29,10 +41,12 @@ namespace XamBodyFit
                 streamWriter.Close();
             }
 
-            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            using (var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse())
             {
-                result = streamReader.ReadToEnd();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    result = streamReader.ReadToEnd();
+                }
             }
             return result;
         }
@@ -52,10 +66,12 @@ namespace XamBodyFit
                 streamWriter.Close();
             }
 
-            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            using (var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse())
             {
-                result = streamReader.ReadToEnd();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    result = streamReader.ReadToEnd();
+                }
             }
             return result;
         }

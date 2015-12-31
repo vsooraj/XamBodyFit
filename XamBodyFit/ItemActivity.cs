@@ -10,7 +10,7 @@ namespace XamBodyFit
     [Activity(Theme = "@style/AppTheme")]
     public class ItemActivity : Activity
     {
-        int categoryId;
+        int categoryId, subCategoryId;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -21,6 +21,7 @@ namespace XamBodyFit
             var play = FindViewById<Button>(Resource.Id.btnPlay);
             string filePath = Intent.GetStringExtra("MyVideo") ?? "Video not available";
             categoryId = int.Parse(Intent.GetStringExtra("CategoryId") ?? "0");
+            subCategoryId = int.Parse(Intent.GetStringExtra("SubCategoryId") ?? "0");
             LaunchVideo(videoView, filePath);
 
             stop.Click += delegate
@@ -64,10 +65,8 @@ namespace XamBodyFit
             }
             using (var uri = Android.Net.Uri.Parse(filePath))
             {
-
                 videoView.SetVideoURI(uri);
                 videoView.Visibility = ViewStates.Visible;
-
                 videoView.Start();
             }
 

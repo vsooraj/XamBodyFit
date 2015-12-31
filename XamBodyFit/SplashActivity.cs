@@ -11,7 +11,7 @@ namespace XamBodyFit
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            Thread.Sleep(4000);
+            Thread.Sleep(2000);
             StartActivity(typeof(MainActivity));
         }
 

@@ -190,17 +190,17 @@ namespace XamBodyFit
 			// aapt resource value: 0x7f070002
 			public const int TextView01 = 2131165186;
 			
-			// aapt resource value: 0x7f070020
-			public const int bottomContainer = 2131165216;
+			// aapt resource value: 0x7f070022
+			public const int bottomContainer = 2131165218;
 			
-			// aapt resource value: 0x7f070021
-			public const int bottomSubContainer = 2131165217;
+			// aapt resource value: 0x7f070023
+			public const int bottomSubContainer = 2131165219;
 			
 			// aapt resource value: 0x7f070003
 			public const int btnActivate = 2131165187;
 			
-			// aapt resource value: 0x7f070024
-			public const int btnActivatem = 2131165220;
+			// aapt resource value: 0x7f07001f
+			public const int btnActivatem = 2131165215;
 			
 			// aapt resource value: 0x7f07001e
 			public const int btnAlready = 2131165214;
@@ -211,8 +211,8 @@ namespace XamBodyFit
 			// aapt resource value: 0x7f07001d
 			public const int btnEmail = 2131165213;
 			
-			// aapt resource value: 0x7f070022
-			public const int btnFacebookLike = 2131165218;
+			// aapt resource value: 0x7f070024
+			public const int btnFacebookLike = 2131165220;
 			
 			// aapt resource value: 0x7f07001c
 			public const int btnFacebookTemp = 2131165212;
@@ -229,11 +229,11 @@ namespace XamBodyFit
 			// aapt resource value: 0x7f070005
 			public const int btnRecover = 2131165189;
 			
-			// aapt resource value: 0x7f070026
-			public const int btnRecoverm = 2131165222;
+			// aapt resource value: 0x7f070021
+			public const int btnRecoverm = 2131165217;
 			
-			// aapt resource value: 0x7f070029
-			public const int btnRegister = 2131165225;
+			// aapt resource value: 0x7f070028
+			public const int btnRegister = 2131165224;
 			
 			// aapt resource value: 0x7f07000f
 			public const int btnStop = 2131165199;
@@ -241,11 +241,11 @@ namespace XamBodyFit
 			// aapt resource value: 0x7f070004
 			public const int btnTrain = 2131165188;
 			
-			// aapt resource value: 0x7f070025
-			public const int btnTrainm = 2131165221;
+			// aapt resource value: 0x7f070020
+			public const int btnTrainm = 2131165216;
 			
-			// aapt resource value: 0x7f070023
-			public const int btnWatchUs = 2131165219;
+			// aapt resource value: 0x7f070025
+			public const int btnWatchUs = 2131165221;
 			
 			// aapt resource value: 0x7f070016
 			public const int cbxRememberMe = 2131165206;
@@ -271,8 +271,8 @@ namespace XamBodyFit
 			// aapt resource value: 0x7f070019
 			public const int mainContainer = 2131165209;
 			
-			// aapt resource value: 0x7f07002a
-			public const int mainImageView = 2131165226;
+			// aapt resource value: 0x7f070029
+			public const int mainImageView = 2131165225;
 			
 			// aapt resource value: 0x7f07001b
 			public const int middleContainer = 2131165211;
@@ -289,9 +289,6 @@ namespace XamBodyFit
 			// aapt resource value: 0x7f07001a
 			public const int topContainer = 2131165210;
 			
-			// aapt resource value: 0x7f07001f
-			public const int tvText = 2131165215;
-			
 			// aapt resource value: 0x7f07000c
 			public const int txtDescription = 2131165196;
 			
@@ -301,11 +298,11 @@ namespace XamBodyFit
 			// aapt resource value: 0x7f070013
 			public const int txtEmail = 2131165203;
 			
-			// aapt resource value: 0x7f070027
-			public const int txtFirstName = 2131165223;
+			// aapt resource value: 0x7f070026
+			public const int txtFirstName = 2131165222;
 			
-			// aapt resource value: 0x7f070028
-			public const int txtLastName = 2131165224;
+			// aapt resource value: 0x7f070027
+			public const int txtLastName = 2131165223;
 			
 			// aapt resource value: 0x7f070014
 			public const int txtPassword = 2131165204;
@@ -342,16 +339,13 @@ namespace XamBodyFit
 			public const int Main = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int MainDrawer = 2130903045;
+			public const int Menu = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int Menu = 2130903046;
+			public const int register = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int register = 2130903047;
-			
-			// aapt resource value: 0x7f030008
-			public const int splash = 2130903048;
+			public const int splash = 2130903047;
 			
 			static Layout()
 			{
