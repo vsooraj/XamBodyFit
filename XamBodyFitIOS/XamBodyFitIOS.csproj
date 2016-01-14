@@ -83,14 +83,86 @@
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
     <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>XamBodyFitIOS.Application</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AlreadyViewController.cs" />
+    <Compile Include="AlreadyViewController.designer.cs">
+      <DependentUpon>AlreadyViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomViewController.cs" />
+    <Compile Include="CustomViewController.designer.cs">
+      <DependentUpon>CustomViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmailViewController.cs" />
+    <Compile Include="EmailViewController.designer.cs">
+      <DependentUpon>EmailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaceBookViewController.cs" />
+    <Compile Include="FaceBookViewController.designer.cs">
+      <DependentUpon>FaceBookViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <BundleResource Include="Resources\Icon-60%402x.png" />
+    <BundleResource Include="Resources\Icon.png" />
+    <BundleResource Include="Resources\Icon%402x.png" />
+    <BundleResource Include="Images\InitialScreen\%403_bg.png" />
+    <BundleResource Include="Images\InitialScreen\%403_email.png" />
+    <BundleResource Include="Images\InitialScreen\%403_email_pressed.png" />
+    <BundleResource Include="Images\InitialScreen\%403_facebook.png" />
+    <BundleResource Include="Images\InitialScreen\%403_facebook_pressed.png" />
+    <BundleResource Include="Images\InitialScreen\%402x_bg.png" />
+    <BundleResource Include="Images\InitialScreen\logo.png" />
+    <BundleResource Include="Images\InitialScreen\logo-small.png" />
+    <BundleResource Include="Images\Sign Up\%403_email.png" />
+    <BundleResource Include="Images\Sign Up\%403_pass.png" />
+    <BundleResource Include="Images\Sign Up\user.png" />
+    <BundleResource Include="Images\Sign Up\name-icon.png" />
+    <BundleResource Include="Images\Sign Up\name.png" />
+    <BundleResource Include="Images\Sign Up\password.png" />
+    <BundleResource Include="Images\Sign Up\password%402x.png" />
+    <BundleResource Include="Images\Sign Up\password%403x.png" />
+    <BundleResource Include="Images\Sign Up\email%403x.png" />
+    <BundleResource Include="Images\Sign Up\email%402x.png" />
+    <BundleResource Include="Images\Sign Up\email.png" />
+    <BundleResource Include="Images\Main\%403_LikeWatch.png" />
+    <ImageAsset Include="Resources/Media.xcassets/AppIcons.appiconset/Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources/Media.xcassets/LaunchImages.launchimage/Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-568h%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <InterfaceDefinition Include="CustomViewController.xib" />
+    <InterfaceDefinition Include="FaceBookViewController.xib" />
+    <InterfaceDefinition Include="EmailViewController.xib" />
+    <InterfaceDefinition Include="AlreadyViewController.xib" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="Info.plist" />
+    <Compile Include="MainViewController.cs" />
+    <Compile Include="MainViewController.designer.cs">
+      <DependentUpon>MainViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuViewController.cs" />
+    <Compile Include="MenuViewController.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <Content Include="Entitlements.plist" />
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <InterfaceDefinition Include="MainViewController.xib" />
+    <InterfaceDefinition Include="MenuViewController.xib" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -98,5 +170,6 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

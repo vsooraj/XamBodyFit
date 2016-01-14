@@ -8,8 +8,7 @@ namespace XamBodyFitIOS
     [Register("AppDelegate")]
     public class AppDelegate : UIApplicationDelegate
     {
-        // class-level declarations
-
+        UINavigationController nav;
         public override UIWindow Window
         {
             get;
@@ -18,14 +17,14 @@ namespace XamBodyFitIOS
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            // create a new window instance based on the screen size
-            Window = new UIWindow(UIScreen.MainScreen.Bounds);
-
-            // If you have defined a root view controller, set it here:
-            // Window.RootViewController = myViewController;
-
-            // make the window visible
+            Window = new UIWindow(UIScreen.MainScreen.Bounds) { BackgroundColor = UIColor.Black };
+            var mainViewController = new MainViewController();
+            nav = new UINavigationController(mainViewController);
+            Window.RootViewController = nav;
+            Window.BackgroundColor = UIColor.FromPatternImage(UIImage.FromFile("Images/InitialScreen/@3_bg.png"));
+            UINavigationBar.Appearance.BarTintColor = UIColor.White;
             Window.MakeKeyAndVisible();
+
 
             return true;
         }
